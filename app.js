@@ -92,7 +92,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 			// Add book to UI
 			UI.addBookToList(book);
 
-			//Show succes message
+			//Show success message
 			UI.showAlert('Book Added!', 'success')
 
 			//Clear fields
@@ -102,4 +102,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 //Event: Remove a book
 document.querySelector('#book-list').addEventListener('click', (e) => {
 	UI.deleteBook(e.target)
+
+	//Show delete message
+	UI.showAlert('Book deleted!', 'info')
 });
