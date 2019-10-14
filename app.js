@@ -51,5 +51,6 @@ document.querySelector('#book-form').addEventListener('submit', (e)
 	=>{
 		//get form values
 		const title = document.querySelector('#title').value;
+		const author = document.querySelector('#author').value;
 	})
 //Event: Remove a book
