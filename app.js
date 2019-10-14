@@ -42,6 +42,13 @@ class UI {
 		list.appendChild(row); 
 	}
 
+    //parentElement 2* because it will remove the whole row
+	static deleteBook(el){
+		if(el.classList.contains('delete')){
+			el.parentElement.parentElement.remove();
+		}
+	}
+
 	static clearFields(){
 		document.querySelector('#title').value = '';
 		document.querySelector('#author').value = '';
