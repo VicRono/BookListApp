@@ -70,6 +70,19 @@ class UI {
 }
 
 //Store Class:Handles strorage
+class Store{
+	static getBooks(){
+		let books;
+		if(localStorage.getItem('books') === null){
+			books = [];
+		}else{
+			books = JSON.parse(localStorage.getItem('books'));
+		}
+		return books;
+
+	}
+}
+
 //Event: Display Book
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
 //Event: Add a book..need to handle collecting data from the form, instantiating new book and add book to list
