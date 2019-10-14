@@ -46,5 +46,10 @@ class UI {
 //Store Class:Handles strorage
 //Event: Display Book
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
-//Event: Add a book
+//Event: Add a book..need to handle collecting data from the form, instantiating new book and add book to list
+document.querySelector('#book-form').addEventListener('submit', (e) 
+	=>{
+		//get form values
+		const title = document.querySelector('#title').value;
+	})
 //Event: Remove a book
