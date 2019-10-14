@@ -21,6 +21,10 @@ class UI {
           	isbn: '45545'
           }
 		];
+
+		const books = StoredBooks;
+
+		books.forEach((book) => UI.addBookToList(book));
 	}
 }
 //Store Class:Handles strorage
