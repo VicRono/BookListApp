@@ -26,6 +26,12 @@ class UI {
 
 		books.forEach((book) => UI.addBookToList(book));
 	}
+
+	static addBookToList(book) {
+		const list =document.getElementById('#book-list');
+
+		const row = document.createElement('tr');
+	}
 }
 //Store Class:Handles strorage
 //Event: Display Book
