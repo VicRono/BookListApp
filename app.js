@@ -54,6 +54,9 @@ document.querySelector('#book-form').addEventListener('submit', (e)
 		const author = document.querySelector('#author').value;
 		const isbn = document.querySelector('#isbn').value;
 
-		
+		//instantiate book
+		const book = new Book(title, author, isbn);
+
+		console.log(book)
 	});
 //Event: Remove a book
