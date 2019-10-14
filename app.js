@@ -34,9 +34,12 @@ class UI {
 
 		row.innerHTML = `
 		  <td>${book.title}</td>
+		  <td>${book.author}</td>
+		  
 		`; 
 	}
 }
+
 //Store Class:Handles strorage
 //Event: Display Book
 //Event: Add a book
