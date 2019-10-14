@@ -47,8 +47,10 @@ class UI {
 //Event: Display Book
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
 //Event: Add a book..need to handle collecting data from the form, instantiating new book and add book to list
-document.querySelector('#book-form').addEventListener('submit', (e) 
-	=>{
+document.querySelector('#book-form').addEventListener('submit', (e) => {
+		// prevent default submit
+		e.preventDefault();
+		
 		//get form values
 		const title = document.querySelector('#title').value;
 		const author = document.querySelector('#author').value;
