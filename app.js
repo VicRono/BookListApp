@@ -9,20 +9,8 @@ class Book{
 //UI Class: Handle UI tasks
 class UI {
 	static displayBooks(){
-		const StoredBooks = [
-          {
-          	title: 'Book One',
-          	author: 'John Doe',
-          	isbn: '3434434'
-          },
-          {
-          	title: 'Book Two',
-          	author: 'Jane Doe',
-          	isbn: '45545'
-          }
-		];
 
-		const books = StoredBooks;
+		const books = Store.getBooks();
 
 		books.forEach((book) => UI.addBookToList(book));
 	}
@@ -86,6 +74,19 @@ class Store{
 		books.push(book);
 		localStorage.setItem('books', JSON.stringify(books));
 	}
+
+	static removeBooks(isbn){
+		const books = Store.getBooks();
+
+		//foreach loop to check book at index, if ISBN number matches-book will be deleted.
+		books.forEach((book, index) => {
+			if(book.isbn === isbn){
+				books.splice(index, 1);
+			}
+		});
+
+		localStorage.setItem('books', JSON.stringify(books));
+	}
 }
 
 //Event: Display Book
@@ -109,6 +110,9 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
 			// Add book to UI
 			UI.addBookToList(book);
+
+			//add book to store
+			store.addBook(book);
 
 			//Show success message
 			UI.showAlert('Book Added!', 'success')
